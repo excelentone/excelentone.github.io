@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="两种方法位运算实现加法器    一、递归解法：    #include&amp;lt;iostream&amp;gt; using namespace std; int add(int x, int y) {     //异或实现两数相加不进位     int a = x^y;     //相与移位实现进位     int b = (x&amp;amp;y)&amp;lt;&amp;lt;1;     //如果b==0，没有进">
+<meta name="description" content="本文总结了加法器实现的两种方法">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="soonblog">
+<meta property="og:title" content="两种方法位运算实现加法器">
 <meta property="og:url" content="http://yoursite.com/2017/04/14/两种方法位运算实现加法器/index.html">
 <meta property="og:site_name" content="soonblog">
-<meta property="og:description" content="两种方法位运算实现加法器    一、递归解法：    #include&amp;lt;iostream&amp;gt; using namespace std; int add(int x, int y) {     //异或实现两数相加不进位     int a = x^y;     //相与移位实现进位     int b = (x&amp;amp;y)&amp;lt;&amp;lt;1;     //如果b==0，没有进">
-<meta property="og:updated_time" content="2017-04-13T16:06:07.676Z">
+<meta property="og:description" content="本文总结了加法器实现的两种方法">
+<meta property="og:updated_time" content="2017-04-13T16:16:06.784Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="soonblog">
-<meta name="twitter:description" content="两种方法位运算实现加法器    一、递归解法：    #include&amp;lt;iostream&amp;gt; using namespace std; int add(int x, int y) {     //异或实现两数相加不进位     int a = x^y;     //相与移位实现进位     int b = (x&amp;amp;y)&amp;lt;&amp;lt;1;     //如果b==0，没有进">
+<meta name="twitter:title" content="两种方法位运算实现加法器">
+<meta name="twitter:description" content="本文总结了加法器实现的两种方法">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>soonblog</title>
+<title>两种方法位运算实现加法器 | soonblog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -261,7 +261,7 @@
   
     <div class="article-meta">
       <a href="/2017/04/14/两种方法位运算实现加法器/" class="article-date">
-      <time datetime="2017-04-13T16:06:07.644Z" itemprop="datePublished">2017-04-14</time>
+      <time datetime="2017-04-13T16:12:24.959Z" itemprop="datePublished">2017-04-14</time>
 </a>
 
 
@@ -272,80 +272,33 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      两种方法位运算实现加法器
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>两种方法位运算实现加法器</title>
-<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css">
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-</head>
-<body><div class="container"><h3 id="一递归解法">一、递归解法：</h3>
+        <p>本文总结了加法器实现的两种方法<br><a id="more"></a></p>
+<p>###一、递归解法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">using namespace std;</div><div class="line">int add(int x, int y)</div><div class="line">&#123;</div><div class="line">	//异或实现两数相加不进位</div><div class="line">	int a = x^y;</div><div class="line">	//相与移位实现进位</div><div class="line">	int b = (x&amp;y)&lt;&lt;1;</div><div class="line">	//如果b==0，没有进位了，就返回相加的结果</div><div class="line">	if (b == 0)</div><div class="line">	&#123;</div><div class="line">		return a;</div><div class="line">	&#125;</div><div class="line">	//继续递归相加和进位</div><div class="line">	return add(a, b);</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	int x, y;</div><div class="line"></div><div class="line">	while (cin &gt;&gt; x &gt;&gt; y) &#123;</div><div class="line">		cout &lt;&lt; add(x, y) &lt;&lt; endl;</div><div class="line">	&#125;</div><div class="line">	system(&quot;pause&quot;);</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>###二、循环解法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int add1(int x, int y)</div><div class="line">&#123;</div><div class="line">	int sum;</div><div class="line">	int carry;</div><div class="line">	int bx, by;</div><div class="line">	int base;</div><div class="line"></div><div class="line">	base = 1;</div><div class="line">	//carry用来判断是否需要进位</div><div class="line">	carry = 0;</div><div class="line">	sum = 0;</div><div class="line">	while (base != 0) &#123;</div><div class="line">		bx = x &amp; base;</div><div class="line">		by = y &amp; base;</div><div class="line">		base &lt;&lt;= 1;</div><div class="line">		sum |= ((bx) ^ (by) ^ carry);</div><div class="line">		carry = ((bx &amp; by) || (bx &amp; carry) || (by &amp; carry)) ? base : 0;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return sum;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
-
-
-<pre class="prettyprint"><code class=" hljs cpp"><span class="hljs-preprocessor">#include&lt;iostream&gt;</span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
-<span class="hljs-keyword">int</span> add(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)
-{
-    <span class="hljs-comment">//异或实现两数相加不进位</span>
-    <span class="hljs-keyword">int</span> a = x^y;
-    <span class="hljs-comment">//相与移位实现进位</span>
-    <span class="hljs-keyword">int</span> b = (x&amp;y)&lt;&lt;<span class="hljs-number">1</span>;
-    <span class="hljs-comment">//如果b==0，没有进位了，就返回相加的结果</span>
-    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>)
-    {
-        <span class="hljs-keyword">return</span> a;
-    }
-    <span class="hljs-comment">//继续递归相加和进位</span>
-    <span class="hljs-keyword">return</span> add(a, b);
-}
-<span class="hljs-keyword">int</span> main()
-{
-    <span class="hljs-keyword">int</span> x, y;
-
-    <span class="hljs-keyword">while</span> (<span class="hljs-built_in">cin</span> &gt;&gt; x &gt;&gt; y) {
-        <span class="hljs-built_in">cout</span> &lt;&lt; add(x, y) &lt;&lt; endl;
-    }
-    system(<span class="hljs-string">"pause"</span>);
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-}</code></pre>
-
-
-
-<h3 id="二循环解法">二、循环解法：</h3>
-
-
-
-<pre class="prettyprint"><code class=" hljs axapta"><span class="hljs-preprocessor">#include &lt;iostream&gt;</span>
-using namespace std;
-
-<span class="hljs-keyword">int</span> add1(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)
-{
-    <span class="hljs-keyword">int</span> <span class="hljs-keyword">sum</span>;
-    <span class="hljs-keyword">int</span> carry;
-    <span class="hljs-keyword">int</span> bx, <span class="hljs-keyword">by</span>;
-    <span class="hljs-keyword">int</span> base;
-
-    base = <span class="hljs-number">1</span>;
-    <span class="hljs-comment">//carry用来判断是否需要进位</span>
-    carry = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">sum</span> = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">while</span> (base != <span class="hljs-number">0</span>) {
-        bx = x &amp; base;
-        <span class="hljs-keyword">by</span> = y &amp; base;
-        base &lt;&lt;= <span class="hljs-number">1</span>;
-        <span class="hljs-keyword">sum</span> |= ((bx) ^ (<span class="hljs-keyword">by</span>) ^ carry);
-        carry = ((bx &amp; <span class="hljs-keyword">by</span>) || (bx &amp; carry) || (<span class="hljs-keyword">by</span> &amp; carry)) ? base : <span class="hljs-number">0</span>;
-    }
-
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">sum</span>;
-}</code></pre></div></body>
-</html>
       
     </div>
     
@@ -353,12 +306,12 @@ using namespace std;
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/04/14/两种方法位运算实现加法器/"></a></p>
+        <p><span>本文标题:</span><a href="/2017/04/14/两种方法位运算实现加法器/">两种方法位运算实现加法器</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">sunxingying</a></p>
-        <p><span>发布时间:</span>2017-04-14, 00:06:07</p>
-        <p><span>最后更新:</span>2017-04-14, 00:06:07</p>
+        <p><span>发布时间:</span>2017-04-14, 00:12:24</p>
+        <p><span>最后更新:</span>2017-04-14, 00:16:06</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/04/14/两种方法位运算实现加法器/" title="">http://yoursite.com/2017/04/14/两种方法位运算实现加法器/</a>
+            <span>原始链接:</span><a class="post-url" href="/2017/04/14/两种方法位运算实现加法器/" title="两种方法位运算实现加法器">http://yoursite.com/2017/04/14/两种方法位运算实现加法器/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/04/14/两种方法位运算实现加法器/　　作者: sunxingying" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -378,6 +331,12 @@ using namespace std;
             </div>
         
         
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/04/14/index/">
+                    
+                </a>
+            </div>
+        
     </nav>
 
   
@@ -386,7 +345,7 @@ using namespace std;
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一递归解法"><span class="toc-number">1.</span> <span class="toc-text">一、递归解法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二循环解法"><span class="toc-number">2.</span> <span class="toc-text">二、循环解法：</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -422,7 +381,7 @@ using namespace std;
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"　| soonblog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"两种方法位运算实现加法器　| soonblog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -450,11 +409,13 @@ using namespace std;
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/04/14/index/" title="下一篇: ">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/04/14/两种方法位运算实现加法器/">两种方法位运算实现加法器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/12/c程序设计语言之注释转换-状态机/">c程序设计语言之注释转换-状态机</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/11/斐波那契函数再总结--模板元编程/">斐波那契函数再总结--模板元编程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/11/c++动态绑定与静态绑定&&effective 37条/">c++动态绑定与静态绑定&&effective 37条</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/04/14/index/">index</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/14/两种方法位运算实现加法器/">两种方法位运算实现加法器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/12/c程序设计语言之注释转换-状态机/">c程序设计语言之注释转换-状态机</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/11/斐波那契函数再总结--模板元编程/">斐波那契函数再总结--模板元编程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/11/c++动态绑定与静态绑定&&effective 37条/">c++动态绑定与静态绑定&&effective 37条</a></li></ul>
 
 
 
