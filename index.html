@@ -259,6 +259,120 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-两种方法位运算实现加法器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/14/两种方法位运算实现加法器/" class="article-date">
+      <time datetime="2017-04-13T16:06:07.644Z" itemprop="datePublished">2017-04-14</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>两种方法位运算实现加法器</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css">
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h3 id="一递归解法">一、递归解法：</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs cpp"><span class="hljs-preprocessor">#include&lt;iostream&gt;</span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">int</span> add(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)
+{
+    <span class="hljs-comment">//异或实现两数相加不进位</span>
+    <span class="hljs-keyword">int</span> a = x^y;
+    <span class="hljs-comment">//相与移位实现进位</span>
+    <span class="hljs-keyword">int</span> b = (x&amp;y)&lt;&lt;<span class="hljs-number">1</span>;
+    <span class="hljs-comment">//如果b==0，没有进位了，就返回相加的结果</span>
+    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">return</span> a;
+    }
+    <span class="hljs-comment">//继续递归相加和进位</span>
+    <span class="hljs-keyword">return</span> add(a, b);
+}
+<span class="hljs-keyword">int</span> main()
+{
+    <span class="hljs-keyword">int</span> x, y;
+
+    <span class="hljs-keyword">while</span> (<span class="hljs-built_in">cin</span> &gt;&gt; x &gt;&gt; y) {
+        <span class="hljs-built_in">cout</span> &lt;&lt; add(x, y) &lt;&lt; endl;
+    }
+    system(<span class="hljs-string">"pause"</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}</code></pre>
+
+
+
+<h3 id="二循环解法">二、循环解法：</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs axapta"><span class="hljs-preprocessor">#include &lt;iostream&gt;</span>
+using namespace std;
+
+<span class="hljs-keyword">int</span> add1(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)
+{
+    <span class="hljs-keyword">int</span> <span class="hljs-keyword">sum</span>;
+    <span class="hljs-keyword">int</span> carry;
+    <span class="hljs-keyword">int</span> bx, <span class="hljs-keyword">by</span>;
+    <span class="hljs-keyword">int</span> base;
+
+    base = <span class="hljs-number">1</span>;
+    <span class="hljs-comment">//carry用来判断是否需要进位</span>
+    carry = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">sum</span> = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span> (base != <span class="hljs-number">0</span>) {
+        bx = x &amp; base;
+        <span class="hljs-keyword">by</span> = y &amp; base;
+        base &lt;&lt;= <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">sum</span> |= ((bx) ^ (<span class="hljs-keyword">by</span>) ^ carry);
+        carry = ((bx &amp; <span class="hljs-keyword">by</span>) || (bx &amp; carry) || (<span class="hljs-keyword">by</span> &amp; carry)) ? base : <span class="hljs-number">0</span>;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">sum</span>;
+}</code></pre></div></body>
+</html>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-c程序设计语言之注释转换-状态机" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
