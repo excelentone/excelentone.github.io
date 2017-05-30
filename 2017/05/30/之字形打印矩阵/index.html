@@ -15,17 +15,19 @@
 
 
 
-<meta name="description" content="本文总结了加法器实现的两种方法">
+<meta name="description" content="###题目:   　　给定一个矩阵matrix，按照“之”字形的方式打印这个矩阵。例如： 　　　　1 　  2  　 3  　 4  　　　　5 　  6 　  7  　 8 　　　　9　  10  　11 　12 　　“之”字形打印的结果为：1,2,5,9,6,3,4,7,10,11,8,12 　　要求额外的空间复杂度为O(1)。 ###解题思路：  上坐标（tR，tC）的初始为（0,0），先沿">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="两种方法位运算实现加法器">
-<meta property="og:url" content="http://yoursite.com/2017/04/14/两种方法位运算实现加法器/index.html">
+<meta property="og:title" content="soonblog">
+<meta property="og:url" content="http://yoursite.com/2017/05/30/之字形打印矩阵/index.html">
 <meta property="og:site_name" content="soonblog">
-<meta property="og:description" content="本文总结了加法器实现的两种方法">
-<meta property="og:updated_time" content="2017-04-13T16:16:06.784Z">
+<meta property="og:description" content="###题目:   　　给定一个矩阵matrix，按照“之”字形的方式打印这个矩阵。例如： 　　　　1 　  2  　 3  　 4  　　　　5 　  6 　  7  　 8 　　　　9　  10  　11 　12 　　“之”字形打印的结果为：1,2,5,9,6,3,4,7,10,11,8,12 　　要求额外的空间复杂度为O(1)。 ###解题思路：  上坐标（tR，tC）的初始为（0,0），先沿">
+<meta property="og:image" content="http://img.blog.csdn.net/20170530102508498?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2pnZ2o=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-05-30T02:36:26.291Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="两种方法位运算实现加法器">
-<meta name="twitter:description" content="本文总结了加法器实现的两种方法">
+<meta name="twitter:title" content="soonblog">
+<meta name="twitter:description" content="###题目:   　　给定一个矩阵matrix，按照“之”字形的方式打印这个矩阵。例如： 　　　　1 　  2  　 3  　 4  　　　　5 　  6 　  7  　 8 　　　　9　  10  　11 　12 　　“之”字形打印的结果为：1,2,5,9,6,3,4,7,10,11,8,12 　　要求额外的空间复杂度为O(1)。 ###解题思路：  上坐标（tR，tC）的初始为（0,0），先沿">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170530102508498?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2pnZ2o=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>两种方法位运算实现加法器 | soonblog</title>
+<title>soonblog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -261,11 +263,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-两种方法位运算实现加法器" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-之字形打印矩阵" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/04/14/两种方法位运算实现加法器/" class="article-date">
-      <time datetime="2017-04-13T16:12:24.959Z" itemprop="datePublished">2017-04-14</time>
+      <a href="/2017/05/30/之字形打印矩阵/" class="article-date">
+      <time datetime="2017-05-30T02:38:50.403Z" itemprop="datePublished">2017-05-30</time>
 </a>
 
 
@@ -276,32 +278,32 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      两种方法位运算实现加法器
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>本文总结了加法器实现的两种方法<br><a id="more"></a></p>
-<p>###一、递归解法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">using namespace std;</div><div class="line">int add(int x, int y)</div><div class="line">&#123;</div><div class="line">	//异或实现两数相加不进位</div><div class="line">	int a = x^y;</div><div class="line">	//相与移位实现进位</div><div class="line">	int b = (x&amp;y)&lt;&lt;1;</div><div class="line">	//如果b==0，没有进位了，就返回相加的结果</div><div class="line">	if (b == 0)</div><div class="line">	&#123;</div><div class="line">		return a;</div><div class="line">	&#125;</div><div class="line">	//继续递归相加和进位</div><div class="line">	return add(a, b);</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	int x, y;</div><div class="line"></div><div class="line">	while (cin &gt;&gt; x &gt;&gt; y) &#123;</div><div class="line">		cout &lt;&lt; add(x, y) &lt;&lt; endl;</div><div class="line">	&#125;</div><div class="line">	system(&quot;pause&quot;);</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>###二、循环解法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int add1(int x, int y)</div><div class="line">&#123;</div><div class="line">	int sum;</div><div class="line">	int carry;</div><div class="line">	int bx, by;</div><div class="line">	int base;</div><div class="line"></div><div class="line">	base = 1;</div><div class="line">	//carry用来判断是否需要进位</div><div class="line">	carry = 0;</div><div class="line">	sum = 0;</div><div class="line">	while (base != 0) &#123;</div><div class="line">		bx = x &amp; base;</div><div class="line">		by = y &amp; base;</div><div class="line">		base &lt;&lt;= 1;</div><div class="line">		sum |= ((bx) ^ (by) ^ carry);</div><div class="line">		carry = ((bx &amp; by) || (bx &amp; carry) || (by &amp; carry)) ? base : 0;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return sum;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>###题目:</p>
+<p>  　　给定一个矩阵matrix，按照“之”字形的方式打印这个矩阵。例如：</p>
+<p>　　　　1 　  2  　 3  　 4 </p>
+<p>　　　　5 　  6 　  7  　 8</p>
+<p>　　　　9　  10  　11 　12</p>
+<p>　　“之”字形打印的结果为：1,2,5,9,6,3,4,7,10,11,8,12</p>
+<p>　　要求额外的空间复杂度为O(1)。</p>
+<p>###解题思路：</p>
+<ol>
+<li><p>上坐标（tR，tC）的初始为（0,0），先沿着矩阵的第一行移动（tC++）,当达到第一行最右边的元素后，再沿着矩阵最后一列移动  (tR++)。</p>
+</li>
+<li><p>下坐标（dR，dC）的初始为（0,0），先沿着矩阵的第一列移动（dR++），当到达第一列最下边的元素时，再沿着矩阵的最后一行一定（dC++）。</p>
+</li>
+<li><p>上坐标与下坐标同步移动，每次移动后的上坐标与下坐标的连线就是矩阵中的一条斜线，打印斜线上的元素即可。</p>
+</li>
+<li><p>如果上次斜线是从左下向右上打印的，这次一定是从右上向左下打印，反之亦然。总之，可以把打印的方向用boolean变量表示，每次取反即可。</p>
+</li>
+</ol>
+<blockquote>
+<p><img src="http://img.blog.csdn.net/20170530102508498?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2pnZ2o=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>###代码如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostReam&gt;</div><div class="line">using namespace std;</div><div class="line">void Print(int(*a)[4], int tR, int tC, int dR, int dC, bool flag);</div><div class="line">void PrintMatRix()</div><div class="line">&#123;</div><div class="line">	int arr[][4] = &#123; &#123; 1, 2, 3, 4 &#125;</div><div class="line">					, &#123; 5, 6, 7, 8 &#125;</div><div class="line">					, &#123;9,10,11,12&#125; </div><div class="line">					&#125;;</div><div class="line">	int tC = 0;</div><div class="line">	int tR = 0;</div><div class="line">	int dC = 0;</div><div class="line">	int dR = 0;</div><div class="line">	int endR = 2;</div><div class="line">	int endC = 3;</div><div class="line">	bool fromup = false;</div><div class="line">	while (tR != endR + 1)</div><div class="line">	&#123;</div><div class="line">		Print(arr, tR, tC, dR, dC, fromup);</div><div class="line">		tR = tC == endC ? tR + 1 : tR;</div><div class="line">		tC = tC == endC ? tC : tC + 1;</div><div class="line">		dC = dR == endR ? dC + 1 : dC;</div><div class="line">		dR = dR == endR ? dR : dR + 1;</div><div class="line">		fromup = !fromup;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">void Print(int (*a)[4] ,int tR, int tC, int dR, int dC ,bool flag)</div><div class="line">&#123;</div><div class="line">	if (flag)</div><div class="line">	&#123;</div><div class="line">		while (tR != dR + 1)</div><div class="line">			cout &lt;&lt; a[tR++][tC--] &lt;&lt; &quot; &quot;;</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		while (dR != tR - 1)</div><div class="line">		&#123;</div><div class="line">			cout &lt;&lt; a[dR--][dC++] &lt;&lt; &quot; &quot;;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	PrintMatRix();</div><div class="line">	system(&quot;pause&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -310,13 +312,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/04/14/两种方法位运算实现加法器/">两种方法位运算实现加法器</a></p>
+        <p><span>本文标题:</span><a href="/2017/05/30/之字形打印矩阵/"></a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">sunxingying</a></p>
-        <p><span>发布时间:</span>2017-04-14, 00:12:24</p>
-        <p><span>最后更新:</span>2017-04-14, 00:16:06</p>
+        <p><span>发布时间:</span>2017-05-30, 10:38:50</p>
+        <p><span>最后更新:</span>2017-05-30, 10:36:26</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/04/14/两种方法位运算实现加法器/" title="两种方法位运算实现加法器">http://yoursite.com/2017/04/14/两种方法位运算实现加法器/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/04/14/两种方法位运算实现加法器/　　作者: sunxingying" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/05/30/之字形打印矩阵/" title="">http://yoursite.com/2017/05/30/之字形打印矩阵/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/05/30/之字形打印矩阵/　　作者: sunxingying" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -329,17 +331,11 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/04/12/c程序设计语言之注释转换-状态机/">
-                    c程序设计语言之注释转换-状态机
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
                 <a href="/2017/04/15/相信未来！/">
                     相信未来
                 </a>
             </div>
+        
         
     </nav>
 
@@ -385,7 +381,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"两种方法位运算实现加法器　| soonblog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"　| soonblog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -405,7 +401,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/04/12/c程序设计语言之注释转换-状态机/" title="上一篇: c程序设计语言之注释转换-状态机">
+            <a href="/2017/04/15/相信未来！/" title="上一篇: 相信未来">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -413,9 +409,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/04/15/相信未来！/" title="下一篇: 相信未来">
-                <i class="fa fa-angle-right"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
 
