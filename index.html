@@ -278,33 +278,28 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/30/之字形打印矩阵/">之字形打印矩阵</a>
+    </h1>
+  
+
+      </header>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>###题目:</p>
+              <p>###题目:</p>
 <p>  　　给定一个矩阵matrix，按照“之”字形的方式打印这个矩阵。例如：</p>
 <p>　　　　1 　  2  　 3  　 4 </p>
 <p>　　　　5 　  6 　  7  　 8</p>
 <p>　　　　9　  10  　11 　12</p>
 <p>　　“之”字形打印的结果为：1,2,5,9,6,3,4,7,10,11,8,12</p>
-<p>　　要求额外的空间复杂度为O(1)。</p>
-<p>###解题思路：</p>
-<ol>
-<li><p>上坐标（tR，tC）的初始为（0,0），先沿着矩阵的第一行移动（tC++）,当达到第一行最右边的元素后，再沿着矩阵最后一列移动  (tR++)。</p>
-</li>
-<li><p>下坐标（dR，dC）的初始为（0,0），先沿着矩阵的第一列移动（dR++），当到达第一列最下边的元素时，再沿着矩阵的最后一行一定（dC++）。</p>
-</li>
-<li><p>上坐标与下坐标同步移动，每次移动后的上坐标与下坐标的连线就是矩阵中的一条斜线，打印斜线上的元素即可。</p>
-</li>
-<li><p>如果上次斜线是从左下向右上打印的，这次一定是从右上向左下打印，反之亦然。总之，可以把打印的方向用boolean变量表示，每次取反即可。</p>
-</li>
-</ol>
-<blockquote>
-<p><img src="http://img.blog.csdn.net/20170530102508498?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2pnZ2o=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>###代码如下：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostReam&gt;</div><div class="line">using namespace std;</div><div class="line">void Print(int(*a)[4], int tR, int tC, int dR, int dC, bool flag);</div><div class="line">void PrintMatRix()</div><div class="line">&#123;</div><div class="line">	int arr[][4] = &#123; &#123; 1, 2, 3, 4 &#125;</div><div class="line">					, &#123; 5, 6, 7, 8 &#125;</div><div class="line">					, &#123;9,10,11,12&#125; </div><div class="line">					&#125;;</div><div class="line">	int tC = 0;</div><div class="line">	int tR = 0;</div><div class="line">	int dC = 0;</div><div class="line">	int dR = 0;</div><div class="line">	int endR = 2;</div><div class="line">	int endC = 3;</div><div class="line">	bool fromup = false;</div><div class="line">	while (tR != endR + 1)</div><div class="line">	&#123;</div><div class="line">		Print(arr, tR, tC, dR, dC, fromup);</div><div class="line">		tR = tC == endC ? tR + 1 : tR;</div><div class="line">		tC = tC == endC ? tC : tC + 1;</div><div class="line">		dC = dR == endR ? dC + 1 : dC;</div><div class="line">		dR = dR == endR ? dR : dR + 1;</div><div class="line">		fromup = !fromup;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">void Print(int (*a)[4] ,int tR, int tC, int dR, int dC ,bool flag)</div><div class="line">&#123;</div><div class="line">	if (flag)</div><div class="line">	&#123;</div><div class="line">		while (tR != dR + 1)</div><div class="line">			cout &lt;&lt; a[tR++][tC--] &lt;&lt; &quot; &quot;;</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		while (dR != tR - 1)</div><div class="line">		&#123;</div><div class="line">			cout &lt;&lt; a[dR--][dC++] &lt;&lt; &quot; &quot;;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	PrintMatRix();</div><div class="line">	system(&quot;pause&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+<p>　　要求额外的空间复杂度为O(1)。<br>
+          
       
     </div>
     
@@ -313,6 +308,10 @@
       
 
       
+      
+        <p class="article-more-link">
+          <a href="/2017/05/30/之字形打印矩阵/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
