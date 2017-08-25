@@ -8,6 +8,22 @@
 	<meta name="Keywords" content="关键字">
 	<meta name="Description" content="描述">
   <!--样式 css 变漂亮 衣柜-->
+  <script language="javascript">  
+function checkIP()  
+{  
+	obj = document.getElementById("ip").value;    
+	var exp=/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;  
+	var reg = obj.match(exp);  
+	if(reg==null)  
+	{  
+		alert("IP地址非法");  
+	}  
+	else  
+	{  
+	alert("IP地址合法");  
+	}  
+}  
+</script>
   <style type="text/css">
 		*{margin:0px; padding:0px;}/* *通配符-》设置统一的模式 边距为0 */
 		body{background:url("http://cgjop.img48.wal8.com/img48/568895_20170411192836/149191017272.jpg"); perspective:3000px; /*通过眼睛去看3D元素的距离，使3D子元素获得一个透视的效果*/ overflow:hidden; font:14px/50px "微软雅黑"; /*字体大小为14px/字体行高位50px*/ color:#fff;}
@@ -41,31 +57,23 @@
 			<!--
 			action 提交地址
 			placeholder 默认显示内容，当输入内容时消失，当内容为空时显示 -->
-				<form action="demo_form.html" method="get">
-					<dl>
-						<dt>请输入你的昵称：</dt>
-						<dd><input type="text" onFocus="this.value=''" value="孙兴颖" placeholder="你的昵称"/></dd>
+			<form name="input">
+			         <dl>
+						<dt></dt>
+						<dd></dd>
 					</dl>
 					<dl>
-							<!--电话类型为 tel 在手机显示为数字键盘  number为数字类型-->
-						<dt>请输入你的电话：</dt>
-						<dd><input type="number" placeholder="你的电话" max="2"/></dd>
+						<dt>请输入要检验的字符串</dt>
+						<dd><input type="text" name="data1" id="ip"></dd>
+					</dl>
+					
+					<dl>
+						<dt></dt>
+						<dd></dd>
 					</dl>
 					<dl>
-						<dt>请输入你的邮箱：</dt>
-						<dd><input type="Email" placeholder="你的邮箱" /></dd>
-					</dl>
-					<dl>
-						<dt>请输入你的出生日期：</dt>
-						<dd><input type="date" placeholder="个人网站" /></dd>
-					</dl>
-					<dl>
-						<dt>请选择你喜欢的颜色：</dt>
-						<dd><input type="color"  /></dd>
-					</dl>
-					<dl>
-						<dt>提交咯：</dt>
-						<dd><input type="submit" value="提交咯" /></dd>
+						<dt>检验合法性</dt>
+						<dd><input type="submit" value="检验合法性" onclick="checkIP()" /></dd>
 					</dl>
 				</form>
 			</div>
